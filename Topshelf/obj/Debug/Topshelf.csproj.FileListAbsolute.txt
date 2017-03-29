@@ -1,0 +1,12 @@
+E:\Dokumenty\simpleMVC\Topshelf\bin\Debug\Topshelf.exe.config
+E:\Dokumenty\simpleMVC\Topshelf\bin\Debug\Topshelf.exe
+E:\Dokumenty\simpleMVC\Topshelf\bin\Debug\Topshelf.pdb
+E:\Dokumenty\simpleMVC\Topshelf\bin\Debug\log4net.dll
+E:\Dokumenty\simpleMVC\Topshelf\bin\Debug\Topshelf.dll
+E:\Dokumenty\simpleMVC\Topshelf\bin\Debug\Topshelf.Log4Net.dll
+E:\Dokumenty\simpleMVC\Topshelf\bin\Debug\log4net.xml
+E:\Dokumenty\simpleMVC\Topshelf\bin\Debug\Topshelf.xml
+E:\Dokumenty\simpleMVC\Topshelf\bin\Debug\Topshelf.Log4Net.xml
+E:\Dokumenty\simpleMVC\Topshelf\obj\Debug\Topshelf.csprojResolveAssemblyReference.cache
+E:\Dokumenty\simpleMVC\Topshelf\obj\Debug\Topshelf.exe
+E:\Dokumenty\simpleMVC\Topshelf\obj\Debug\Topshelf.pdb
