@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Topshelf;
 using Topshelf.Logging;
+using log4net.Config;
+using System.IO;
 
 namespace Topshelf
 {
@@ -12,39 +14,22 @@ namespace Topshelf
     {
         static void Main(string[] args)
         {
-            HostFactory.Run(x =>
+            HostFactory.Run(x=>
             {
-                x.UseLog4Net();
-                x.Service<SimpleService>(s =>
+                x.UseLog4Net("log4net.config");
+                x.Service<SimpleService>(xs =>
                 {
-                    s.ConstructUsing(() => new SimpleService());
-                    s.WhenStarted(start => start.Start());
-                    s.WhenStopped(stop => stop.Stop());
+                    xs.ConstructUsing<SimpleService>(() => new SimpleService());
+                    xs.WhenStarted(v => v.Start());
+                    xs.WhenStopped(v => v.Stop());
                 });
+                x.RunAsLocalService();
+                x.SetDescription("Description");
+                x.SetDisplayName("Display name");
+                x.SetServiceName("Service name");
+
             }
             );
-        }
-    }
-    class SimpleService
-    {
-        static LogWriter _logger = HostLogger.Get<SimpleService>();
-        public SimpleService()
-        {
-            
-        }
-        public void Start()
-        {
-            _logger.Info($"Starting {this.GetType().Name} service");
-            Console.WriteLine("Service is running");
-            System.Threading.Thread.Sleep(1000);
-            _logger.Info($"Service {this.GetType().Name} started");
-        }
-        public void Stop()
-        {
-            _logger.Info($"Stopping {this.GetType().Name} service");
-            Console.WriteLine("Service is stopping");
-            System.Threading.Thread.Sleep(1000);
-            _logger.Info($"Service {this.GetType().Name} stopped");
         }
     }
 }
